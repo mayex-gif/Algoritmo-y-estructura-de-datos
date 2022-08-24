@@ -55,7 +55,6 @@ def prom_prim_sem(temperaturas):
         promedio = 0
     return promedio
 
-
 # Punto 3
 def reg_mes_tempmin(temperaturas):
     menor_temp = 0

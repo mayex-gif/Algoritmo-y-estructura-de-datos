@@ -26,13 +26,30 @@ def ordenar(trabajos):
                 trabajos[i] , trabajos[g] = trabajos[g], trabajos[i]
 
 
-#Busqueda secuencial
-def linear_search(trabajos):
+# Busqueda secuencial
+def linear_search_por_nombre(trabajos):
     n = len(trabajos)
-    x = str(input('\nIngrese un valor a buscar: ')) #Valor a buscar
+    x = str(input('\nIngrese un nombre a buscar: ')) # Valor a buscar
     for i in range(n):
         if x == trabajos[i].nombre:
             return i
+    return -1
+
+
+# 5- Determinar y mostrar la cantidad de trabajos por tipo.
+def cant_trabajos_tipo(trabajos):
+    cont_0 = cont_1 = cont_2 = cont_3 = 0
+    n = len(trabajos)
+    x = str(input('\nIngrese un tipo a buscar: '))  # Valor a buscar
+    for i in range(n):
+        if x == trabajos[i].tipo and trabajos[i].tipo == 0:
+            cont_0 += 1
+        elif x == trabajos[i].tipo and trabajos[i].tipo == 1:
+            cont_1 += 1
+        elif x == trabajos[i].tipo and trabajos[i].tipo == 2:
+            cont_2 += 1
+        elif x == trabajos[i].tipo and trabajos[i].tipo == 3:
+            cont_3 += 1
     return -1
 
 
@@ -42,13 +59,12 @@ def principal():
     cargar(n, trabajos)
     ordenar(trabajos)
     mostrar(trabajos)
-    pos = linear_search(trabajos)
-    if pos == -1:
+    pos_nombre = linear_search_por_nombre(trabajos)
+    if pos_nombre == -1:
         print("No se encuentra un trabajo con la descripcion ingresada...")
     else:
         print("Trabajo encontrado!")
-        write(trabajos[pos])
-
-
+        write(trabajos[pos_nombre])
+    
 if __name__ == "__main__":
     principal()

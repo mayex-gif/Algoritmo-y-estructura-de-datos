@@ -35,11 +35,11 @@ def write(trabajo):
     print("Cantidad de personas:", trabajo.cant_personal)
 
 
-def principal():
+def test():
     t = Trabajo(1, "Trabajo prueba", 2, 2344.5, 6)
     write(t)
 
 
 if __name__ == "__main__":
-    principal()
+    test()
     
